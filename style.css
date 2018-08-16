@@ -1,0 +1,17 @@
+
+.container{
+	width: 90%;
+	margin: auto;
+	overflow: hidden;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.header{
+	text-align: center;
+	background: #eeeeee;
+	padding: 10px;
+	border-bottom: solid 2px #333333;
+	font-family: sans-serif;
+}
+

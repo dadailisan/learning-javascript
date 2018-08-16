@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning JavaScript</title>
+	<link rel="stylesheet" href="style.css">
+	<!--<script src="main.js"></script>-->
+</head>
+<!--<body id = "body">-->
+<body>
+<div class="header">
+	<h1 id = "heading">Learning JavaScript</h1>
+	<p>
+		With Brad Traversy
+	</p>
+</div>
+
+<div class="container">
+
+	<!-- EVENTS:
+		onClick
+		onmouseover
+		onmouseout
+		onload
+		onchange
+	<button onClick="doClick()">Click Me</button>
+	<button onClick="this.innerHTML = 'You Clicked!'">Click Me</button>
+	<button onClick="changeText(this)">Click Me</button>
+	<button onClick="showDate()">Click Me</button>
+	<button onmouseout="clearDate()" onmouseover="showDate()">Click Me</button>
+	<h1 id="time"></h1>-->
+
+	<form method = "post" action = "something.php" name = "myForm" onsubmit="return validateForm()">
+		<div>
+			<label>First Name</label>
+			<input type = "text" name = "firstName" id = "firstName" placeholder="Enter first name" />
+		</div>
+		<br />
+		<div>
+			<label>Last Name</label>
+			<input type = "text" name = "lastName" placeholder="Enter last name"/>
+		</div>
+		<br />
+		<!--<div>
+			<label>Background</label>
+			<select name = "background" id = "background" onchange = "changeBackground(this)">
+				<option value = "red">Red</option>
+				<option value = "blue">Blue</option>
+				<option value = "green">Green</option>
+			</select>
+		</div>-->
+		<br />
+		<input type = "submit" value = "Submit" />
+	</form>
+</div>
+
+<script>
+	//alert('Script tag worked!')
+	//Numbers, String, Array and Object
+	//var number1=35;
+	//var number2=40;
+	//alert(number1+number2); result: 75
+
+	//var number1='35'
+	//var number2='40'
+	//alert(number1+number2); result:3540
+	//alert('my favorite number is '+ number1); result: my favorite number is 35
+	//var number1=35
+	//alert('my favorite number is '+ number1); result: my favorite number is 35 #stil lable to concatenate string and number
+	//VARIABLES
+	//var can only have letters, numbers, undercores, dollar signs and should begin with a letter or _ or $
+	//var is case sensitive
+	//var test = 'This is a test'
+	//var Test = 'This is another test'
+	//alert(test); result: This is a test
+	//alert(Test); result: This is another test
+	//var myNumber; camel case
+	//var MyNumber; partial case
+	//var my_number; underscore
+
+	//ARRAYS
+	//var colors = ['red', 'blue', 'green'];
+	//alert(colors); result red, blue, green
+	//alert(color[1]); result blue. arrays are 0 base
+	//var colors = new Array('red', 'yellow', 'orange');  #other way to write an array
+	//alert(colors);
+	//addin on array
+	//colors[3] = 'green' #adding on array using index
+	//alert(colors);
+	//colors.push('purple');
+	//alert(colors[3]);
+	//var numbers = [5, 77, 6, 43, 11, 'Seven'];
+	//alert(numbers[4] + numbers[2]) #result Seven6
+	//alert(numbers.length);#return the number of elements on the numbers array
+	// var.length var.push are attributes of properties
+	//alert(numbers.sort()); #sort in acending order via first digit/letter
+	//alert(numbers.reverse());
+
+	//LOOPS
+	//Types of loops
+	//FOR, WHILE and FOR EACH loops
+	//FOR LOOP
+	//for(variable; condition; increment)
+	//for(var i = 1; i <= 10; i++){
+	//	console.log('I love the number ' + i); #console.log is like print
+	//}
+	//WHILE LOOP
+	//var i = 0;
+	//while(i < 10){
+	//	console.log(i);
+	//	i++;
+	//}
+	//FOR EACH LOOP
+	//var numbers = [33, 54, 76, 34, 2, 6];
+	//numbers.forEach(function(num){
+	//	console.log(num);
+	//}); result: 33, 54, 76, 34, 2, 6
+	//for(var i = 0; i < numbers.length; i++){
+	//	console.log(numbers[i]);
+	//} result: 33, 54, 76, 34, 2, 6
+
+	//CONDITIONALS
+	// = is assigning
+	// == is comparing
+	// === is comparing and data types should be the same
+	// != is not equal
+	// <= less than or equal to
+	// >= greater than or equal to
+	// && and conditions should be both true to be true
+	// || or conditions will be true if one of the statements is true
+	//var var1 = 3;
+	//var var2 = 4;
+	//if(var1 == var2 && var1 == 3){
+	//	console.log('This is true');
+	//} else {
+	//	console.log('This is false');
+	//}
+
+	//SWITCH statement
+	//var fruit = ['apple', 'banana'];
+	//switch(fruit[0]){
+	//	case "banana":
+	//		alert('I hate bananas');
+	//		break;
+	//	case "apple":
+	//		alert('I love apples');
+	//		break;
+	//	case "orange":
+	//		alert('Oranges are ok');
+	//		break;
+	//	default:
+	//		alert('I love all other fruits');
+	//		break;
+	//}
+	//SWITCH statement is like if elif else statements
+
+	//OBJECTS
+	//Types of objects
+	//Object Literal
+	//var person = {
+	//	first_name: 'Brad',
+	//	last_name: 'Traversy',
+	//	age: 34,
+	//	children: ['Brianna', 'Nicholas'],
+	//	address: {
+	//		street: '555 Something st.',
+	//		city: 'Boston',
+	//		state: 'MA',
+	//	},
+	//	full_name: function(){
+	//		return this.first_name + " " //+this.last_name;
+	//	}
+	//}
+	//console.log(person.age + person.first_name);
+	//console.log(person.children[0]);
+	//Embedded object
+	//console.log(person.address.street);
+	//console.log(person.address.state);
+	//console.log(person.full_name());
+	//Object constructor
+	//var apple = new Object();
+	//adding properties of the object
+	//apple.color = 'red';
+	//apple.shape = 'round';
+	//adding a function on the object
+	//apple.describe = function(){
+	//	return 'An apple is the color ' + this.color + ' and is the shape ' +this.shape;
+	//}
+	//console.log(apple);
+	//console.log(apple.color);
+	// CONSTRUCTOR PATTERN
+	//function Fruit(name, color, shape){
+	//	this.name = name;
+	//	this.color = color;
+	//	this.shape = shape;
+
+	//	this.describe = function(){
+	//		return 'A '+ this.name +' is the color '+ this.color + ' and is the shape ' + this.shape;
+	//	}
+	//}
+
+	//var apple = new Fruit('apple', 'red', 'round')
+
+	//console.log(apple.name);
+	//var melon = new Fruit('melon', 'green', 'round');
+	//console.log(melon.describe());
+
+	//ARRAYS of OBJECTS
+	//var users = [
+	//	{
+	//		name: 'John Doe',
+	//		age: 30
+	//	},
+	//	{
+	//		name: 'Mark Smith',
+	//		age: 44
+	//	},
+	//	{
+	//		name: 'Shelly Williams',
+	//		age: 20
+	//	}
+	//];
+	
+	//console.log(users[0].name);		
+
+	//EVENTS
+	//function doClick(){
+	//	alert('You Clicked!');
+	//}
+
+	//function changeText(id){
+	//	id.innerHTML = 'You Clicked!';
+	//}
+
+	//function changeText(){
+	//	var heading = document.getElementById('heading'); #this gets the id='heading' then store it on var heading
+	//	heading.innerHTML = 'You Clicked!'; #using the innerHTML attribute, it changed the text with id='heading'
+	//}
+	//function showDate(){
+	//	var time = document.getElementById('time');
+	//	time.innerHTML = Date();
+
+	//}
+
+	//function clearDate(){
+	//	var time = document.getElementById('time');
+	//	time.innerHTML = '';
+	//}
+
+	//FORMS
+	//function changeBackground(x){
+	//	console.log(x);
+	//}
+	//function changeBackground(x){
+	//	console.log(x.value)
+	//	var body = document.getElementById('body');
+	//	body.style.backgroundColor = x.value;
+
+	//}
+	//function changeBackground(x){
+	//	console.log(x.value)
+	//	var heading = document.getElementById('heading');
+	//	heading.style.color = x.value;
+
+	//}
+
+	function validateForm(){
+		var firstName = document.forms["myForm"]["firstName"].value;
+
+		if(firstName == null || firstName == ""){
+			alert("First name is required");
+			return false;
+		}
+		if(firstName.length < 3){
+			alert("First name must be at least 3 chars");
+			return false;
+		}
+	}
+
+</script>
+</body>
+</html>
